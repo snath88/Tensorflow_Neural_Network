@@ -1,0 +1,59 @@
+The size of the weights is the number of inputs times the number of outputs, so k x m. It is extremely important to understand that the weights don’t depend on the number of observations (samples).
+
+The number of biases depends on the number of output variables. Moreover, like the weights, the biases don’t depend on the number of observations.
+
+If the number of inputs is k, the number of outputs is m, and the number of observations n, what is the shape of the biases, b?
+
+
+Tensorflow installation process:
+
+conda create --name py3-TF2 python=3.10.15
+
+conda activate py3-TF2
+
+conda install tensorflow
+pip install upgrade tensorflow
+pip install ipykernel
+
+pip show tensorflow: see the tensorflow version
+conda info --envs
+
+
+To add a conda environment to Jupyter (Jupyter Notebook or JupyterLab):
+
+At the Anaconda Prompt:
+
+run conda activate <env name>
+run conda install -c anaconda ipykernel
+run python -m ipykernel install --user --name=<env name>
+
+
+#############chat gpt####
+
+conda create --name tf_env python=3.8
+conda activate tf_env
+pip install tensorflow
+pip install tensorflow-gpu
+python
+import tensorflow as tf
+print(tf.__version__)
+exit()
+If you need additional packages (like matplotlib, numpy, pandas, etc.), you can install them using:
+conda install <package_name>
+conda activate tf_env
+conda install jupyterlab
+conda install ipykernel
+
+Add the Environment to Jupyter as a Kernel
+After installing ipykernel, you need to register your environment as a Jupyter kernel. Run the following command:
+
+
+python -m ipykernel install --user --name=tf_env --display-name "Python (tf_env)"
+
+verify kernel:
+jupyter kernelspec list
+
+Restart JupyterLab
+Once you've made these changes, restart JupyterLab and try launching the kernel again:
+
+jupyter lab

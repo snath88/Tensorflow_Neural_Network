@@ -1,0 +1,53 @@
+So now I have this instance of this scaler,
+
+and what I'm going to do is I need to actually fit
+
+the scaler onto my training data.
+
+So I'll say fit on X_train.
+
+And what fit does is it simply calculates the parameters it
+
+needs to perform the actual scaling later on.
+
+So if we recall from calling help on MinMax scaler,
+
+the MinMax scaler is dependent on the standard deviation,
+
+the minimum value, and the maximum value
+
+within that particular dataset.
+
+So what fit does is it essentially
+
+calculates the standard deviation, the min and max.
+
+So that's what fit does.
+
+So we run fit on our training set,
+
+and the reason we only run it on the training set
+
+is because we want to prevent what's known
+
+as data leakage from the test set.
+
+We don't want to assume that we have prior information
+
+of the test set, so we only fit our scaler
+
+to the training set to not try to cheat,
+
+and look into the test set.
+
+Then what we need to do is
+
+transform
+
+our training data,
+
+so we'll say X_train is now equal
+
+to scaler.transform on X_train,
+
+that actually performs a transformation.
